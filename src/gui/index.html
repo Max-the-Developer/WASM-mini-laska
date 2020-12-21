@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Mini Laska - WASM edition</title>
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style/computed/main.min.css">
+
+   <script defer type="module" src="script/index.mjs"></script>
+</head>
+<body>
+
+   <div id="menu">
+      <div class="selector">
+         <span>Select game type: </span>
+         <div id="type1" class="menu-item inactive"><strong>Player vs Player</strong></div>
+         <div id="typeE" class="menu-item inactive"><strong>Player vs Computer</strong></div>
+         <!-- <div id="type3" class="menu-item inactive"><strong>Player vs Computer</strong> (hard)</div> -->
+         <br />
+         <div id="credits" class="menu-item"><strong>Info & Credits</strong></div>
+         <hr />
+         <div id="exit" class="menu-item">Exit</div>
+      </div>
+
+      <div id="diff">
+         <div class="message">
+            <div class="title">Choose the difficulty</div>
+            <div class="diffs">
+               <div id="type2">Easy</div>
+               <div id="type3">Medium</div>
+               <div id="type4">Hard</div>
+            </div>
+            <div class="confirm"><div class="dismiss">CANCEL</div></div>
+         </div>
+      </div>
+   </div>
+
+   <div class="container inactive">
+      <table>
+         <tr>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+         </tr>
+         <tr>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+         </tr>
+         <tr>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+         </tr>
+         <tr>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+         </tr>
+         <tr>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+         </tr>
+         <tr>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+         </tr>
+         <tr>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+            <td class="board_cell"></td>
+         </tr>
+      </table>
+
+      <div id="end-state">
+         <div class="message">
+            <div class="title">Game Over</div>
+            <div class="text">The match concluded in a <span class="accent">tie</span>. No player has <span class="accent">legal moves</span> left</div>
+            <div class="confirm">
+               <div class="btn back">GO BACK</div>
+               <div class="btn inspection-tool">TOGGLE INSPECTION</div>
+            </div>
+         </div>
+      </div>
+
+      <div class="abort">Abort game session</div>
+
+      <div class="game-turn blue"><b>BLUE TEAM</b> turn</div>
+   </div>
+
+   <div id="info">
+      <div class="message">
+         <div class="title">Info & Credits</div>
+         <div class="text">
+            <span>Info:</span>
+            <p style="margin-left: 1em; text-align: justify;">
+               You can choose between several game types...<br>
+               Play against another player choosing the <span>PvP</span>
+               game type or challenge yourself against a <span>CPU bot</span> with 3 main difficulties.<br><br>
+               Then to play (when you open a game session) you have just to <span>select</span> the piece to move and
+               give it a direction to go selecting one of the <span>marked moves</span> it can do
+            </p>
+            <span>Credits:</span>
+            <div style="margin-left: 1em; margin-top: 1em; text-align: justify;">
+               This game has been developed by:
+               <ul>
+                  <li>Inga Chicu</li>
+                  <li>Luca Molin</li>
+                  <li>Massimo Vettori</li>
+               </ul>
+            </div>
+         </div>
+         <div class="confirm"><div class="close">GOT IT</div></div>
+      </div>
+   </div>
+
+               <!--   <div id="info">-->
+<!--      <div class="message">-->
+<!--         <div class="title">Info & Credits</div>-->
+<!--         <div class="text">-->
+<!--            <span>Info</span>-->
+<!--            <p>-->
+<!--               You can choose between several game types... You can play against another player choosing the <span>PvP</span>-->
+<!--               game type or challenge yourself against a <span>CPU bot</span> with 3 main difficulties.<br>-->
+<!--            </p>-->
+<!--            <span>Info</span>-->
+<!--            <p>-->
+<!--               This game has been developer by:-->
+<!--               <ul>-->
+<!--                  <li>Inga Chicu</li>-->
+<!--                  <li>Luca Molin</li>-->
+<!--                  <li>Massimo Vettori</li>-->
+<!--               </ul>-->
+<!--            </p>-->
+<!--         </div>-->
+<!--   </div>-->
+<!--         </div>-->
+<!--         <div class="confirm"><div class="close">GOT IT</div></div>-->
+<!--      </div>-->
+<!--   </div>-->
+</body>
+</html>
