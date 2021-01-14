@@ -151,7 +151,7 @@ export int *get_hint() {
 
     for (i=0; i<22; i++) {
         int flag  = 0;
-        int *hint = malloc(sizeof(int));
+        int *hint = (int *) malloc(sizeof(int));
         Piece *p  = getPiece(i);
 
         if (hint == NULL)       { continue; }
@@ -162,7 +162,6 @@ export int *get_hint() {
             if (isMoveLegal( &(p->moves[m]) )) { flag = 1; }
             if (flag) { break; }
         }
-
 
         if (flag) {
             *hint = i;
@@ -175,6 +174,7 @@ export int *get_hint() {
     }
 
     for (i=0; i<l->len; i++) { buffered_hint[i] = *( (int *) getElementAt(l, i) ); }
+    destroyList(l);
 
     return buffered_hint;
 }
